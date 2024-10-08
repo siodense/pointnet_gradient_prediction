@@ -30,18 +30,18 @@ import pytorch3d.transforms.rotation_conversions as rc
 active_link_names=["right_shoulder_fe_link","right_shoulder_aa_link","right_shoulder_ie_link","right_elbow_fe_link","right_wrist_rotation_link","right_wrist_flexion_link"]
 active_joint_names=["right_shoulder_fe","right_shoulder_aa","right_shoulder_ie","right_elbow_fe","right_wrist_rotation","right_wrist_flexion"]
 
-robot=pURDF.load("/home/simon/lsa1.1_new/robot_obj_combined_hulls.urdf")
+robot=pURDF.load("./lsa1.1_new/robot_obj_combined_hulls.urdf")
 sizes=[]
 active_link_meshes=[]
 for link in active_link_names:
-    mesh=trimesh.load("/home/simon/lsa1.1_new/meshes/urdf/obj_combined_hulls/"+link+".obj")
+    mesh=trimesh.load("./lsa1.1_new/meshes/urdf/obj_combined_hulls/"+link+".obj")
     active_link_meshes.append(mesh)
     sizes.append(mesh.bounding_box.extents)
 
 
 scene_descriptions=np.load("scene_descriptions_3.npy",allow_pickle=True)
 
-chain = pk.build_serial_chain_from_urdf(open("/home/simon/lsa1.1_new/robot_obj_combined_hulls.urdf").read(), active_link_names[5],"right_shoulder_fe_link")
+chain = pk.build_serial_chain_from_urdf(open("./lsa1.1_new/robot_obj_combined_hulls.urdf").read(), active_link_names[5],"right_shoulder_fe_link")
 
 rand=default_rng()
 
@@ -304,7 +304,7 @@ def trimesh_dist_func(pc,jps,rot_dir=False):
     
 def get_jacobian(jps,offset,ee_link):
     
-    chain = pk.build_serial_chain_from_urdf(open("/home/simon/lsa1.1_new/robot_obj_combined_hulls.urdf").read(), active_link_names[ee_link],"right_shoulder_fe_link")
+    chain = pk.build_serial_chain_from_urdf(open("./lsa1.1_new/robot_obj_combined_hulls.urdf").read(), active_link_names[ee_link],"right_shoulder_fe_link")
     
     J = chain.jacobian(jps, locations=offset)
     return J    
