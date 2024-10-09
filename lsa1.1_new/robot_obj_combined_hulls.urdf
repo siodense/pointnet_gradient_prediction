@@ -51,13 +51,13 @@
 <visual>
 <origin xyz="9.47873756175138e-18 -2.856872724499304e-17 -0.024000000000000684" rpy="-2.7618585142051945e-16 -0.0 6.8534929388594916e-31" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/root_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/root_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="9.47873756175138e-18 -2.856872724499304e-17 -0.024000000000000684" rpy="-2.7618585142051945e-16 -0.0 6.8534929388594916e-31" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/root_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/root_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -95,13 +95,13 @@
 <visual>
 <origin xyz="0.0 1.262177448353619e-29 4.3368086899380734e-19" rpy="-1.8325957145940461 1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/torso_yaw_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_yaw_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 1.262177448353619e-29 4.3368086899380734e-19" rpy="-1.8325957145940461 1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/torso_yaw_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_yaw_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -156,13 +156,13 @@
 <visual>
 <origin xyz="-0.5360921073749237 0.05350000000033585 -0.11149999999987684" rpy="-3.141592653589793 -1.570796326794666 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/column_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/column_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.5360921073749237 0.05350000000033585 -0.11149999999987684" rpy="-3.141592653589793 -1.570796326794666 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/column_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/column_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -183,13 +183,13 @@
 <visual>
 <origin xyz="0.08 0.0 -0.08549999999999999" rpy="-1.5707963267948966 5.328688394996611e-30 1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/torso_pitch_lower_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_pitch_lower_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.08 0.0 -0.08549999999999999" rpy="-1.5707963267948966 5.328688394996611e-30 1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/torso_pitch_lower_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_pitch_lower_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -212,13 +212,13 @@
 <visual>
 <origin xyz="1.3877787807814457e-17 0.0 -0.01905000000000001" rpy="1.5707963267948966 -0.0 -3.95206709005231e-32" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/hydraulic_container_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/hydraulic_container_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="1.3877787807814457e-17 0.0 -0.01905000000000001" rpy="1.5707963267948966 -0.0 -3.95206709005231e-32" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/hydraulic_container_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/hydraulic_container_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -239,13 +239,13 @@
 <visual>
 <origin xyz="1.3877787807814457e-15 0.13999999999999058 0.17820069103793562" rpy="1.5707963267948966 1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_wheel_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_wheel_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="1.3877787807814457e-15 0.13999999999999058 0.17820069103793562" rpy="1.5707963267948966 1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_wheel_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_wheel_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -268,13 +268,13 @@
 <visual>
 <origin xyz="-6.659169743405968e-16 -0.13999999999999047 0.17820069103793554" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_wheel_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_wheel_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-6.659169743405968e-16 -0.13999999999999047 0.17820069103793554" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_wheel_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_wheel_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -297,13 +297,13 @@
 <visual>
 <origin xyz="-0.13224999876448648 -0.4734999999999997 -0.18342210737489983" rpy="0.0 -5.543281940506e-09 3.1309853526513357e-32" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_caster_swivel_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_caster_swivel_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.13224999876448648 -0.4734999999999997 -0.18342210737489983" rpy="0.0 -5.543281940506e-09 3.1309853526513357e-32" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_caster_swivel_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_caster_swivel_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -326,13 +326,13 @@
 <visual>
 <origin xyz="0.13225000123551348 -0.4734999999999997 -0.18342210737489995" rpy="0.0 -5.543281940506e-09 3.1309853526513357e-32" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_caster_swivel_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_caster_swivel_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.13225000123551348 -0.4734999999999997 -0.18342210737489995" rpy="0.0 -5.543281940506e-09 3.1309853526513357e-32" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_caster_swivel_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_caster_swivel_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -355,13 +355,13 @@
 <visual>
 <origin xyz="0.0 2.7755575615628914e-17 0.003500000000000003" rpy="-1.5519979019635813e-30 1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/torso_pitch_upper_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_pitch_upper_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 2.7755575615628914e-17 0.003500000000000003" rpy="-1.5519979019635813e-30 1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/torso_pitch_upper_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_pitch_upper_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -425,13 +425,13 @@
 <visual>
 <origin xyz="-0.07630210737489995 -0.5134999999999996 0.13224999876448534" rpy="-0.0 1.5707963212516147 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_caster_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_caster_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.07630210737489995 -0.5134999999999996 0.13224999876448534" rpy="-0.0 1.5707963212516147 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_caster_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_caster_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -454,13 +454,13 @@
 <visual>
 <origin xyz="-0.07630210737489995 0.5134999999999996 0.13225000123551353" rpy="-3.141592653589793 -1.5707963212516147 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_caster_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_caster_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.07630210737489995 0.5134999999999996 0.13225000123551353" rpy="-3.141592653589793 -1.5707963212516147 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_caster_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_caster_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -483,13 +483,13 @@
 <visual>
 <origin xyz="-6.938893903907228e-18 0.0 0.06937500000000008" rpy="-5.586166405652295e-31 1.0471975511965979 1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_shoulder_fe_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_shoulder_fe_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-6.938893903907228e-18 0.0 0.06937500000000008" rpy="-5.586166405652295e-31 1.0471975511965979 1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_shoulder_fe_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_shoulder_fe_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -512,13 +512,13 @@
 <visual>
 <origin xyz="6.1235188130565575e-19 0.0 0.0" rpy="-1.964072326306217e-30 -1.0275302189876902e-17 1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/neck_yaw_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/neck_yaw_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="6.1235188130565575e-19 0.0 0.0" rpy="-1.964072326306217e-30 -1.0275302189876902e-17 1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/neck_yaw_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/neck_yaw_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -541,13 +541,13 @@
 <visual>
 <origin xyz="0.0 0.0 0.06937500000000008" rpy="6.740497088515665e-31 -1.0471975511965979 -1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_shoulder_fe_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_shoulder_fe_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 0.0 0.06937500000000008" rpy="6.740497088515665e-31 -1.0471975511965979 -1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_shoulder_fe_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_shoulder_fe_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -578,13 +578,13 @@
 <visual>
 <origin xyz="0.0 2.7755575615628914e-17 -0.031625" rpy="-1.5707963267948966 -6.828148307168349e-30 1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_shoulder_aa_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_shoulder_aa_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 2.7755575615628914e-17 -0.031625" rpy="-1.5707963267948966 -6.828148307168349e-30 1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_shoulder_aa_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_shoulder_aa_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -607,13 +607,13 @@
 <visual>
 <origin xyz="-1.7618285302889447e-19 -5.551115123125783e-17 6.938893903907228e-18" rpy="-3.1415926535897927 7.050168423664557e-16 -4.295123560541974e-31" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/neck_roll_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/neck_roll_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-1.7618285302889447e-19 -5.551115123125783e-17 6.938893903907228e-18" rpy="-3.1415926535897927 7.050168423664557e-16 -4.295123560541974e-31" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/neck_roll_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/neck_roll_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -636,13 +636,13 @@
 <visual>
 <origin xyz="0.0 0.0 -0.031625" rpy="-1.5707963267948966 -1.2425662754484402e-30 -1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_shoulder_aa_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_shoulder_aa_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 0.0 -0.031625" rpy="-1.5707963267948966 -1.2425662754484402e-30 -1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_shoulder_aa_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_shoulder_aa_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -673,13 +673,13 @@
 <visual>
 <origin xyz="0.0 2.7755575615628914e-17 0.12912499999999996" rpy="-3.141592653589793 1.836970198721011e-16 4.5533793101955184e-29" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_shoulder_ie_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_shoulder_ie_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 2.7755575615628914e-17 0.12912499999999996" rpy="-3.141592653589793 1.836970198721011e-16 4.5533793101955184e-29" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_shoulder_ie_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_shoulder_ie_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -710,13 +710,13 @@
 <visual>
 <origin xyz="0.0 0.09449999999999997 -0.029" rpy="1.5707963267948966 5.735462992065669e-17 -6.25055564815869e-18" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/neck_pitch_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/neck_pitch_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 0.09449999999999997 -0.029" rpy="1.5707963267948966 5.735462992065669e-17 -6.25055564815869e-18" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/neck_pitch_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/neck_pitch_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -779,13 +779,13 @@
 <visual>
 <origin xyz="0.0 0.0 0.129125" rpy="3.141592653589793 1.8369701987210275e-16 -5.29732798467742e-32" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_shoulder_ie_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_shoulder_ie_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 0.0 0.129125" rpy="3.141592653589793 1.8369701987210275e-16 -5.29732798467742e-32" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_shoulder_ie_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_shoulder_ie_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -832,13 +832,13 @@
 <visual>
 <origin xyz="-2.7755575615628914e-17 0.010000000000000002 -0.026249999999999996" rpy="1.5707963267948966 3.390113629309306e-30 -1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_elbow_fe_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_elbow_fe_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-2.7755575615628914e-17 0.010000000000000002 -0.026249999999999996" rpy="1.5707963267948966 3.390113629309306e-30 -1.5707963267948966" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_elbow_fe_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_elbow_fe_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -869,13 +869,13 @@
 <visual>
 <origin xyz="-0.009999999999999995 0.0 -0.026249999999999996" rpy="-1.5707963267948966 3.4658797310181623e-31 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_elbow_fe_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_elbow_fe_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.009999999999999995 0.0 -0.026249999999999996" rpy="-1.5707963267948966 3.4658797310181623e-31 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_elbow_fe_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_elbow_fe_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -914,13 +914,13 @@
 <visual>
 <origin xyz="0.0 0.0 6.938893903907228e-18" rpy="-3.141592653589793 2.5421260299864258e-30 1.2862303347851033e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_wrist_rotation_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_wrist_rotation_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 0.0 6.938893903907228e-18" rpy="-3.141592653589793 2.5421260299864258e-30 1.2862303347851033e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_wrist_rotation_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_wrist_rotation_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -943,13 +943,13 @@
 <visual>
 <origin xyz="6.938893903907228e-18 2.7755575615628914e-17 0.0" rpy="3.141592653589793 4.506315468407392e-25 3.141592653589793" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_wrist_rotation_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_wrist_rotation_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="6.938893903907228e-18 2.7755575615628914e-17 0.0" rpy="3.141592653589793 4.506315468407392e-25 3.141592653589793" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_wrist_rotation_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_wrist_rotation_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -996,13 +996,13 @@
 <visual>
 <origin xyz="0.0 -0.1225 0.016990950000000005" rpy="1.5707963267948966 1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_wrist_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_wrist_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -0.1225 0.016990950000000005" rpy="1.5707963267948966 1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_wrist_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_wrist_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1057,13 +1057,13 @@
 <visual>
 <origin xyz="2.7755575615628914e-17 -0.12250000000000003 0.016990950000000005" rpy="1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_wrist_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_wrist_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="2.7755575615628914e-17 -0.12250000000000003 0.016990950000000005" rpy="1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_wrist_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_wrist_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1126,13 +1126,13 @@
 <visual>
 <origin xyz="0.0 -0.0050000000000000044 2.7755575615628914e-17" rpy="-4.776889756388367e-30 7.108538126311427e-30 9.146243139419362e-33" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_abduction_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -0.0050000000000000044 2.7755575615628914e-17" rpy="-4.776889756388367e-30 7.108538126311427e-30 9.146243139419362e-33" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_abduction_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1155,13 +1155,13 @@
 <visual>
 <origin xyz="0.0 -0.004999999999999977 -2.7755575615628914e-17" rpy="-1.0438478552240215e-29 2.7588300477159354e-30 -9.103224237861447e-31" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_abduction_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -0.004999999999999977 -2.7755575615628914e-17" rpy="-1.0438478552240215e-29 2.7588300477159354e-30 -9.103224237861447e-31" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_abduction_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1184,13 +1184,13 @@
 <visual>
 <origin xyz="0.0 -0.0050000000000000044 -2.7755575615628914e-17" rpy="-5.493420561510654e-29 1.78548043511012e-32 -9.103224237861223e-31" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_abduction_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -0.0050000000000000044 -2.7755575615628914e-17" rpy="-5.493420561510654e-29 1.78548043511012e-32 -9.103224237861223e-31" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_abduction_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1213,13 +1213,13 @@
 <visual>
 <origin xyz="0.0 -0.005000000000000032 -2.7755575615628914e-17" rpy="-3.79475265360824e-29 3.5550463092882275e-30 -1.0535087677337404e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_abduction_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -0.005000000000000032 -2.7755575615628914e-17" rpy="-3.79475265360824e-29 3.5550463092882275e-30 -1.0535087677337404e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_abduction_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1242,13 +1242,13 @@
 <visual>
 <origin xyz="0.0 0.019999999999999976 -0.0025000000000000577" rpy="-1.5707963267948966 2.345472529656524e-29 6.472872104732229e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_opposition_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_opposition_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 0.019999999999999976 -0.0025000000000000577" rpy="-1.5707963267948966 2.345472529656524e-29 6.472872104732229e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_opposition_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_opposition_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1271,13 +1271,13 @@
 <visual>
 <origin xyz="2.7755575615628914e-17 0.019999999999999983 -0.00250000000000003" rpy="-1.5707963267948966 -2.8822464224142208e-30 -1.3953077324044914e-29" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_opposition_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_opposition_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="2.7755575615628914e-17 0.019999999999999983 -0.00250000000000003" rpy="-1.5707963267948966 -2.8822464224142208e-30 -1.3953077324044914e-29" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_opposition_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_opposition_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1300,13 +1300,13 @@
 <visual>
 <origin xyz="-6.938893903907228e-18 -0.0050000000000000044 0.0" rpy="1.046059678011391e-29 4.0621201810957394e-30 -9.71153743924765e-27" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_abduction_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-6.938893903907228e-18 -0.0050000000000000044 0.0" rpy="1.046059678011391e-29 4.0621201810957394e-30 -9.71153743924765e-27" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_abduction_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1329,13 +1329,13 @@
 <visual>
 <origin xyz="0.0 -0.0050000000000000044 0.0" rpy="-2.6864630320400566e-30 9.796798552187728e-31 -4.952941554636777e-25" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_abduction_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -0.0050000000000000044 0.0" rpy="-2.6864630320400566e-30 9.796798552187728e-31 -4.952941554636777e-25" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_abduction_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1358,13 +1358,13 @@
 <visual>
 <origin xyz="-6.938893903907228e-18 -0.0050000000000000044 2.7755575615628914e-17" rpy="1.4500067676698927e-29 -1.9713423396215304e-30 9.711650107098243e-27" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_abduction_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-6.938893903907228e-18 -0.0050000000000000044 2.7755575615628914e-17" rpy="1.4500067676698927e-29 -1.9713423396215304e-30 9.711650107098243e-27" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_abduction_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1387,13 +1387,13 @@
 <visual>
 <origin xyz="0.0 -0.0050000000000000044 0.0" rpy="4.0212954893214336e-30 7.560781039057134e-30 -7.477970582502699e-25" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_abduction_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -0.0050000000000000044 0.0" rpy="4.0212954893214336e-30 7.560781039057134e-30 -7.477970582502699e-25" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_abduction_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1416,13 +1416,13 @@
 <visual>
 <origin xyz="-0.0050000000000000044 0.0 -6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.0050000000000000044 0.0 -6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1445,13 +1445,13 @@
 <visual>
 <origin xyz="-0.004999999999999977 -2.7755575615628914e-17 1.3877787807814457e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.004999999999999977 -2.7755575615628914e-17 1.3877787807814457e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1474,13 +1474,13 @@
 <visual>
 <origin xyz="-0.004999999999999977 2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.004999999999999977 2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1503,13 +1503,13 @@
 <visual>
 <origin xyz="-0.0050000000000000044 0.0 6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.0050000000000000044 0.0 6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1532,13 +1532,13 @@
 <visual>
 <origin xyz="0.0 -0.009999999999999981 0.0025000000000000577" rpy="1.5707963267948966 -1.7924713140128638e-29 -6.282435349965838e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_opposition_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_opposition_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -0.009999999999999981 0.0025000000000000577" rpy="1.5707963267948966 -1.7924713140128638e-29 -6.282435349965838e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_opposition_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_opposition_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1562,13 +1562,13 @@
 <visual>
 <origin xyz="0.0 -0.00999999999999998 0.00250000000000003" rpy="1.5707963267948966 3.038715138805295e-30 7.001191795667485e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_opposition_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_opposition_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -0.00999999999999998 0.00250000000000003" rpy="1.5707963267948966 3.038715138805295e-30 7.001191795667485e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_opposition_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_opposition_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1592,13 +1592,13 @@
 <visual>
 <origin xyz="-0.004999999999999949 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.004999999999999949 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1621,13 +1621,13 @@
 <visual>
 <origin xyz="-0.004999999999999977 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.004999999999999977 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1650,13 +1650,13 @@
 <visual>
 <origin xyz="-0.0050000000000000044 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.0050000000000000044 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1679,13 +1679,13 @@
 <visual>
 <origin xyz="-0.0050000000000000044 0.0 -6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="-0.0050000000000000044 0.0 -6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1708,13 +1708,13 @@
 <visual>
 <origin xyz="0.0050000000000000044 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0050000000000000044 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1738,13 +1738,13 @@
 <visual>
 <origin xyz="0.0050000000000000044 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0050000000000000044 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1768,13 +1768,13 @@
 <visual>
 <origin xyz="0.004999999999999977 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.004999999999999977 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1798,13 +1798,13 @@
 <visual>
 <origin xyz="0.0050000000000000044 2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0050000000000000044 2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1828,13 +1828,13 @@
 <visual>
 <origin xyz="0.0 -2.7755575615628914e-17 -0.005999999999999983" rpy="2.408554367752176 -1.6185429562719805e-30 -5.530012156504861e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_abduction_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -2.7755575615628914e-17 -0.005999999999999983" rpy="2.408554367752176 -1.6185429562719805e-30 -5.530012156504861e-30" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_abduction_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1857,13 +1857,13 @@
 <visual>
 <origin xyz="0.0 -2.7755575615628914e-17 -0.0059999999999999845" rpy="2.408554367752176 -2.009157007409366e-29 3.786532345060856e-29" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_abduction_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0 -2.7755575615628914e-17 -0.0059999999999999845" rpy="2.408554367752176 -2.009157007409366e-29 3.786532345060856e-29" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_abduction_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_abduction_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1886,13 +1886,13 @@
 <visual>
 <origin xyz="0.0050000000000000044 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0050000000000000044 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1916,13 +1916,13 @@
 <visual>
 <origin xyz="0.005000000000000032 -2.7755575615628914e-17 -1.3877787807814457e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.005000000000000032 -2.7755575615628914e-17 -1.3877787807814457e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1946,13 +1946,13 @@
 <visual>
 <origin xyz="0.0050000000000000044 -5.551115123125783e-17 -3.469446951953614e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0050000000000000044 -5.551115123125783e-17 -3.469446951953614e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -1976,13 +1976,13 @@
 <visual>
 <origin xyz="0.0050000000000000044 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0050000000000000044 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_mcp_flexion_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2006,13 +2006,13 @@
 <visual>
 <origin xyz="0.043499999999999955 2.7755575615628914e-17 6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_pip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.043499999999999955 2.7755575615628914e-17 6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_pip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2035,13 +2035,13 @@
 <visual>
 <origin xyz="0.043499999999999955 -2.7755575615628914e-17 1.3877787807814457e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_pip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.043499999999999955 -2.7755575615628914e-17 1.3877787807814457e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_pip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2064,13 +2064,13 @@
 <visual>
 <origin xyz="0.043499999999999955 0.0 -3.469446951953614e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_pip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.043499999999999955 0.0 -3.469446951953614e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_pip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2093,13 +2093,13 @@
 <visual>
 <origin xyz="0.04349999999999993 -2.7755575615628914e-17 -6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_pip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.04349999999999993 -2.7755575615628914e-17 -6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_pip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2122,13 +2122,13 @@
 <visual>
 <origin xyz="0.010000000000000078 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_mcp_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.010000000000000078 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_mcp_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2151,13 +2151,13 @@
 <visual>
 <origin xyz="0.01000000000000005 -1.3877787807814457e-17 2.7755575615628914e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_mcp_flexion_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.01000000000000005 -1.3877787807814457e-17 2.7755575615628914e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_mcp_flexion_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_mcp_flexion_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2180,13 +2180,13 @@
 <visual>
 <origin xyz="0.043499999999999955 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_pip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.043499999999999955 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_pip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2209,13 +2209,13 @@
 <visual>
 <origin xyz="0.043499999999999955 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_pip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.043499999999999955 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_pip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2238,13 +2238,13 @@
 <visual>
 <origin xyz="0.04349999999999998 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_pip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.04349999999999998 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_pip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2267,13 +2267,13 @@
 <visual>
 <origin xyz="0.04350000000000001 2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_pip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.04350000000000001 2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_pip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_pip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2296,13 +2296,13 @@
 <visual>
 <origin xyz="0.050499999999999934 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_pip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.050499999999999934 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_pip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2326,13 +2326,13 @@
 <visual>
 <origin xyz="0.05049999999999996 -5.551115123125783e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_pip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.05049999999999996 -5.551115123125783e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_pip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2356,13 +2356,13 @@
 <visual>
 <origin xyz="0.050499999999999934 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_pip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.050499999999999934 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_pip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2386,13 +2386,13 @@
 <visual>
 <origin xyz="0.05049999999999996 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_pip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.05049999999999996 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_pip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2416,13 +2416,13 @@
 <visual>
 <origin xyz="0.020000000000000073 -1.3877787807814457e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_mcp_flexion_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.020000000000000073 -1.3877787807814457e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_mcp_flexion_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2446,13 +2446,13 @@
 <visual>
 <origin xyz="0.020000000000000073 -1.3877787807814457e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_mcp_flexion_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.020000000000000073 -1.3877787807814457e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_mcp_flexion_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_mcp_flexion_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2476,13 +2476,13 @@
 <visual>
 <origin xyz="0.05049999999999999 0.0 6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_pip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.05049999999999999 0.0 6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_pip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2506,13 +2506,13 @@
 <visual>
 <origin xyz="0.05049999999999999 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_pip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.05049999999999999 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_pip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2536,13 +2536,13 @@
 <visual>
 <origin xyz="0.05049999999999999 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_pip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.05049999999999999 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_pip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2566,13 +2566,13 @@
 <visual>
 <origin xyz="0.05049999999999999 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_pip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.05049999999999999 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_pip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_pip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2596,13 +2596,13 @@
 <visual>
 <origin xyz="0.0655 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_dip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.0655 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_dip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2626,13 +2626,13 @@
 <visual>
 <origin xyz="0.06550000000000006 -2.7755575615628914e-17 1.3877787807814457e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_dip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.06550000000000006 -2.7755575615628914e-17 1.3877787807814457e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_dip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2656,13 +2656,13 @@
 <visual>
 <origin xyz="0.06550000000000006 0.0 -3.469446951953614e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_dip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.06550000000000006 0.0 -3.469446951953614e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_dip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2686,13 +2686,13 @@
 <visual>
 <origin xyz="0.06550000000000003 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_dip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.06550000000000003 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_dip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2716,13 +2716,13 @@
 <visual>
 <origin xyz="0.04808854433117703 1.3877787807814457e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_dip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.04808854433117703 1.3877787807814457e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_dip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2745,13 +2745,13 @@
 <visual>
 <origin xyz="0.048088544331176986 2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_dip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.048088544331176986 2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_dip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2774,13 +2774,13 @@
 <visual>
 <origin xyz="0.06549999999999997 0.0 -6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_dip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.06549999999999997 0.0 -6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_dip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2804,13 +2804,13 @@
 <visual>
 <origin xyz="0.06550000000000009 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_dip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.06550000000000009 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_dip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2834,13 +2834,13 @@
 <visual>
 <origin xyz="0.06550000000000006 -2.7755575615628914e-17 -3.469446951953614e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_dip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.06550000000000006 -2.7755575615628914e-17 -3.469446951953614e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_dip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2864,13 +2864,13 @@
 <visual>
 <origin xyz="0.06550000000000006 0.0 6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_dip_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.06550000000000006 0.0 6.938893903907228e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_dip_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_dip_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2894,13 +2894,13 @@
 <visual>
 <origin xyz="0.07050000000000009 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_dip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.07050000000000009 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_middle_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_middle_finger_dip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2932,13 +2932,13 @@
 <visual>
 <origin xyz="0.07050000000000003 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_dip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.07050000000000003 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_pinkie_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_pinkie_finger_dip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -2970,13 +2970,13 @@
 <visual>
 <origin xyz="0.07050000000000003 -2.7755575615628914e-17 -3.469446951953614e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_dip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.07050000000000003 -2.7755575615628914e-17 -3.469446951953614e-18" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_index_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_index_finger_dip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -3008,13 +3008,13 @@
 <visual>
 <origin xyz="0.07050000000000006 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_dip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.07050000000000006 -2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_ring_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_ring_finger_dip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -3046,13 +3046,13 @@
 <visual>
 <origin xyz="0.05608854433117699 -2.7755575615628914e-17 -2.7755575615628914e-17" rpy="-1.5707963267948968 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_dip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.05608854433117699 -2.7755575615628914e-17 -2.7755575615628914e-17" rpy="-1.5707963267948968 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/right_thumb_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/right_thumb_dip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -3084,13 +3084,13 @@
 <visual>
 <origin xyz="0.05608854433117698 -1.3877787807814457e-17 -2.7755575615628914e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_dip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.05608854433117698 -1.3877787807814457e-17 -2.7755575615628914e-17" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_thumb_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_thumb_dip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -3122,13 +3122,13 @@
 <visual>
 <origin xyz="0.07050000000000003 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_dip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.07050000000000003 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_middle_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_middle_finger_dip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -3160,13 +3160,13 @@
 <visual>
 <origin xyz="0.07050000000000012 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_dip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.07050000000000012 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_pinkie_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_pinkie_finger_dip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -3198,13 +3198,13 @@
 <visual>
 <origin xyz="0.07049999999999998 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_dip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.07049999999999998 0.0 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_index_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_index_finger_dip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
@@ -3236,13 +3236,13 @@
 <visual>
 <origin xyz="0.07050000000000009 2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_dip_2_link.obj" />
 </geometry>
 </visual>
 <collision>
 <origin xyz="0.07050000000000009 2.7755575615628914e-17 0.0" rpy="-1.5707963267948966 -1.5707963267948966 0.0" />
 <geometry>
-<mesh filename="./lsa1.1_new//meshes/urdf/obj_combined_hulls/left_ring_finger_dip_2_link.obj" />
+<mesh filename=".//meshes/urdf/obj_combined_hulls/left_ring_finger_dip_2_link.obj" />
 </geometry>
 </collision>
 <inertial>
