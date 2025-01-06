@@ -301,7 +301,7 @@ if __name__=="__main__":
 
     robot, active_link_names, active_joint_names, sizes=util.get_robot_info()
     
-    scene_descriptions=np.load("scene_descriptions_3.npy",allow_pickle=True)
+    scene_descriptions=np.load("scene_descriptions.npy",allow_pickle=True)
     unique_scenes=[scene_descriptions[i*10] for i in range(1000)]
     motion_trajectories=np.load("motion_trajectories.npy", allow_pickle=True)
     obstructed_examples=np.load("obstructed_examples.npy",allow_pickle=True)
@@ -320,7 +320,7 @@ if __name__=="__main__":
     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     model=PN(12,in_channel=9)
-    model.load_state_dict(torch.load("new_best_model_arm_jps_sc_2.pth",map_location=device))
+    model.load_state_dict(torch.load("./model/model_arm.pth",map_location=device))
     model=model.eval()
     new_model=torch.compile(model)
 
