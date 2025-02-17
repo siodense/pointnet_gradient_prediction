@@ -464,7 +464,7 @@ if __name__=="__main__":
 
     robot, active_link_names, active_joint_names, sizes=util.get_robot_info()
     
-    scene_descriptions=np.load("scene_descriptions_3.npy",allow_pickle=True)
+    scene_descriptions=np.load("scene_descriptions.npy",allow_pickle=True)
     unique_scenes=[scene_descriptions[i*10] for i in range(1000)]
     motion_trajectories=np.load("final_arm_test_motion_examples.npy", allow_pickle=True)
     obstructed_examples=np.load("final_arm_test_obstructed_indicies.npy",allow_pickle=True)
