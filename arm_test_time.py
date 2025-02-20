@@ -212,12 +212,11 @@ def combined_dist_func(network,pc,jps,normalize=False,use="network",num_tm_point
 
         min_dist_pred,point_ind=network(test_pc)
 
-        #Ignore first link, it has limited mobility
         min_dist_pred=min_dist_pred[0][1:6]/100
 
         overall_min_dist=min_dist_pred.min()
         
-        closest_link=min_dist_pred.argmin()
+        closest_point_ind=min_dist_pred.argmin()
 
         overall_min_dist.backward()
 
@@ -228,8 +227,9 @@ def combined_dist_func(network,pc,jps,normalize=False,use="network",num_tm_point
 
         gd=grad_dir.detach().cpu().numpy()
                 
-        closest_point_in_pc=closest_points_in_pc[closest_link][0]        
-        closest_point=closest_points_on_meshes[closest_link][0]
+        closest_point_in_pc=closest_points_in_pc[closest_point_ind][0]        
+        closest_point=closest_points_on_meshes[closest_point_ind][0]
+        closest_link=closest_point_ind+1
         
         workspace_gd=torch.tensor(closest_point)-closest_point_in_pc
         
@@ -262,7 +262,6 @@ def combined_dist_func(network,pc,jps,normalize=False,use="network",num_tm_point
         
         #Uses trimesh to calculate the gradient to use in the path adjustment
             if use=="trimesh":
-
                 chain=chains[link_ind]
                 th=jps[:link_ind+2]
                 th.requires_grad=True
@@ -281,27 +280,25 @@ def combined_dist_func(network,pc,jps,normalize=False,use="network",num_tm_point
                 
                 J=chain.jacobian(jps[:link_ind+2],locations=offset)
                 
-                J=J[0]
+                #Only looking at the position velocity, we don't care about a specific rotational velocity
+                J=J[0][:3]
                 J_inv=J.transpose(0,1)
-                rot_dir=torch.zeros(3)
-                padded_workspace_gd=torch.cat((current_workspace_gd,rot_dir))
 
                 gd=torch.zeros([6])
-                gd[:link_ind+2]=torch.matmul(J_inv,padded_workspace_gd)
+                gd[:link_ind+2]=torch.matmul(J_inv,current_workspace_gd)
             
                 mds.append(trimesh_mds[link_ind][i])
                 gds.append(gd.detach().cpu().numpy())
             
-                #new_workspace_gd=torch.matmul(J,gd[:link_ind+2])[:3]
+                new_workspace_gd=torch.matmul(J,gd[:link_ind+2])
             
                 if i==0:
-                    new_workspace_gd=np.matmul(J,gd[:link_ind+2])[:3]
+                    new_workspace_gd=np.matmul(J,gd[:link_ind+2])
                     workspace_gd=new_workspace_gd
             
         #If no method is specified assume no perterbation is intended, this will produce the path as is without 
         #attempting to avoid collisions
             else:
-
                 md=np.inf
                 gd=np.array([])
                 workspace_gd=current_workspace_gd
@@ -367,9 +364,6 @@ def path_adjust(scene,jps,dist_func,motion_scale=0.02,dist_threshold=0.02,scale_
         print("step: ",num_tries)
         print("distance to checkpoint: ",next_checkpoint_dist)
         print("distance to environment: ",md)
-        #print("total_checkpoints",total_checkpoints)
-        #print("num tries", num_tries)
-        #print("max tries", max_tries)
 
         num_tries+=1    
         
@@ -421,10 +415,7 @@ def path_adjust(scene,jps,dist_func,motion_scale=0.02,dist_threshold=0.02,scale_
         closest_links.append(closest_link)
         closest_points.append(closest_point)
         workspace_grad_directions.append(workspace_grad)
-          
-        #print("current jps",current_jps)
-        #print("next jps", next_jps)
-        #print("next checkpoint dist",next_checkpoint_dist)
+
         if next_checkpoint_dist<0.02:
             next_checkpoint+=1
            
@@ -459,12 +450,11 @@ def check_goal(jps_i,jps_f):
     return np.linalg.norm(final_ee_position-current_ee_position)
 
 
-
 if __name__=="__main__":
 
     robot, active_link_names, active_joint_names, sizes=util.get_robot_info()
     
-    scene_descriptions=np.load("scene_descriptions.npy",allow_pickle=True)
+    scene_descriptions=np.load("scene_descriptions_3.npy",allow_pickle=True)
     unique_scenes=[scene_descriptions[i*10] for i in range(1000)]
     motion_trajectories=np.load("final_arm_test_motion_examples.npy", allow_pickle=True)
     obstructed_examples=np.load("final_arm_test_obstructed_indicies.npy",allow_pickle=True)

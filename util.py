@@ -307,9 +307,8 @@ def animate_traj(scene,box_traj,initial_meshes,grad_traj,box_sizes,fps=24,obj_ty
         node_map[s]=node
         
     if pc!=None:
-        mesh=pyrender.Mesh.from_trimesh(pc,smooth=False)
+        mesh=pyrender.Mesh.from_points(pc)
         node=pscene.add(copy.deepcopy(mesh))
-        node_map[pc]=node
   
     v = pyrender.Viewer(pscene, run_in_thread=True,use_raymond_lighting=True)
     
