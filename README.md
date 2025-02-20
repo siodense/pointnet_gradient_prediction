@@ -1,6 +1,5 @@
 # pointnet_gradient_prediction
 
- e
 The following packages are needed:
 pytorch
 urdfpy
@@ -10,7 +9,12 @@ pytorch 3d
 pyrender
 fcl
 
-To run on a specific example and visualize the result use python visualize_examplel.py <method_name> <example_number> where method name is "network", "trimesh", or "none", example number is taken from motion trajectories with
-obstructed_examples recording which example from scene_descriptions is to be run on
+Because certain versions of these packages conflict, an Anaconda environment with the correct versions has been provided with spec-file.txt, use conda install --name myenv --file spec-file.txt to install a working environment
+then clone the repository.
 
-To compare methods on the whole dataset use python arm_test_time.py, this will run each example with each method and compute the average number of successes and completion time for all methods.
+To train a new network first use python pc_gen.py to generate point_clouds from the scene_descriptions file, then simply use python train.py to train a new model.
+
+To test the existing trained model use python arm_test_time.py with the parameter visualize to visualize a specific method/example and test to compare methods on the entire dataset. The parameters are -m,-e,-s,-d,-f,-t for the method,
+example number, motion scale, distance threshold, scale factor, and maximum attempts respectively. The first two are only relevant for the visualize task as test will run every method on every example and report the success rate and 
+average time taken for a successful example
+
