@@ -18,3 +18,5 @@ To test the existing trained model use python arm_test_time.py with the paramete
 example number, motion scale, distance threshold, scale factor, and maximum attempts respectively. The first two are only relevant for the visualize task as test will run every method on every example and report the success rate and 
 average time taken for a successful example
 
+Note pointnet2_utils.py is a modified versoin of the pointnet2_utils.py file from https://github.com/erikwijmans/Pointnet2_PyTorch
+
