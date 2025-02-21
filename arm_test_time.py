@@ -454,15 +454,15 @@ if __name__=="__main__":
 
     robot, active_link_names, active_joint_names, sizes=util.get_robot_info()
     
-    scene_descriptions=np.load("scene_descriptions_3.npy",allow_pickle=True)
+    scene_descriptions=np.load("scene_descriptions.npy",allow_pickle=True)
     unique_scenes=[scene_descriptions[i*10] for i in range(1000)]
-    motion_trajectories=np.load("final_arm_test_motion_examples.npy", allow_pickle=True)
-    obstructed_examples=np.load("final_arm_test_obstructed_indicies.npy",allow_pickle=True)
+    motion_trajectories=np.load("arm_test_motion_examples.npy", allow_pickle=True)
+    obstructed_examples=np.load("arm_test_obstructed_indicies.npy",allow_pickle=True)
 
     chains=[]
 
     for i in range(1,len(active_link_names)):
-        chains.append(pk.build_serial_chain_from_urdf(open("./lsa1.1_new/robot_obj_combined_hulls.urdf").read(), active_link_names[i],"right_shoulder_fe_link"))
+        chains.append(pk.build_serial_chain_from_urdf(open("./test_arm/robot_obj_combined_hulls.urdf").read(), active_link_names[i],"right_shoulder_fe_link"))
 
 
     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
