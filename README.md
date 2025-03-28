@@ -28,7 +28,10 @@ To test the existing trained model use python arm_test_time.py with the paramete
 example number, motion scale, distance threshold, scale factor, and maximum attempts respectively. The first two are only relevant for the visualize task as test will run every method on every example and report the success rate and 
 average time taken for a successful example
 
-Example: python arm_test_time.py visualize -m network -e 400 to run example 400 using
+Example: python arm_test_time.py visualize -m trimesh -e 400 to run example 400 using trimesh to calculate distance and gradient
+
+![avoid](https://github.com/user-attachments/assets/4f72befe-f3ee-4365-b44c-33b8292f80b5)
+
 
 Note pointnet2_utils.py is a modified versoin of the pointnet2_utils.py file from https://github.com/erikwijmans/Pointnet2_PyTorch
 
