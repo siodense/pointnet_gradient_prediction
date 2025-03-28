@@ -16,11 +16,24 @@ from scipy.spatial.transform import Slerp
 from numpy.random import default_rng
 from urdfpy import URDF as pURDF
 
+
 rand=default_rng()
 
 
 ##### DISTANCE CALCULATION AND UTILITY FUNCTIONS ######
 
+def get_robot_info():
+    active_link_names=["right_shoulder_fe_link","right_shoulder_aa_link","right_shoulder_ie_link","right_elbow_fe_link","right_wrist_rotation_link","right_wrist_flexion_link"]
+    active_joint_names=["right_shoulder_fe","right_shoulder_aa","right_shoulder_ie","right_elbow_fe","right_wrist_rotation","right_wrist_flexion"]
+
+    robot=pURDF.load("./test_arm/robot_obj_combined_hulls.urdf")
+    sizes=[]
+    active_link_meshes=[]
+    for link in active_link_names:
+        mesh=trimesh.load("./test_arm/meshes/urdf/obj_combined_hulls/"+link+".obj")
+        active_link_meshes.append(mesh)
+        sizes.append(mesh.bounding_box.extents)
+    return robot, active_link_names, active_joint_names, sizes
 
 def rotation_matrix_from_vectors(vec1, vec2):
     
@@ -462,6 +475,3 @@ def create_grad_rot_matricies(grad_dirs,nearest_points):
             
         amats.append(amat)
     return amats
-
-    
-
