@@ -66,11 +66,11 @@ def network_func(network,pc,jps,normalize=False):
 
     gd=grad_dir.detach().cpu().numpy()
                 
-    return md,gd
+    return md,gd,-1,[],[]
 
-def trimesh_func(pc,jps,num_tm_points=1):
+def trimesh_func(pc,jps,num_tm_points=1,verbose=False):
     
-    poses,meshes,_=util.generate_poses_from_jps(robot,[jps],active_link_names,active_joint_names,sizes)
+    poses,meshes,transformations=util.generate_poses_from_jps(robot,[jps],active_link_names,active_joint_names,sizes)
     
     closest_points_in_pc=[]
     closest_points_on_meshes=[]
@@ -100,61 +100,222 @@ def trimesh_func(pc,jps,num_tm_points=1):
             link_mds.append(dist[closest_point_ind])
             dist=np.concatenate((dist[:closest_point_ind],dist[closest_point_ind+1:]))
             
-        closest_points_in_pc.append(link_closest_pc_points)
-        closest_points_on_meshes.append(link_closest_points)
+        closest_points_in_pc.append(torch.stack(link_closest_pc_points))
+        closest_points_on_meshes.append(np.stack(link_closest_points))
         trimesh_mds.append(link_mds)
-        
-    closest_points_in_pc=np.array(closest_points_in_pc)
-    closest_points_on_meshes=np.array(closest_points_on_meshes)
+
+    closest_points_in_pc=torch.stack(closest_points_in_pc)
+    closest_points_on_meshes=np.stack(closest_points_on_meshes)
     trimesh_mds=np.array(trimesh_mds)
     
-    mds=[]
+    mds=[[],[],[],[],[]]
     gds=[]
-    for i in range(num_tm_points):            
+    
+
+    transformations=transformations[0][1:]
+    inv_transformations=torch.linalg.inv(torch.tensor(transformations))
+
+        
+    current_workspace_gds=[[],[],[],[],[]]
+    offsets=[[],[],[],[],[]]
+    closest_points_on_meshes_tm=[[],[],[],[],[]]
+    
+    for i in range(num_tm_points):   
+        
             
         link_ind=np.argmin(trimesh_mds[:,i])
 
-        position=poses[0][link_ind+1][:3]
+
         closest_point_in_pc=closest_points_in_pc[link_ind][i]
         closest_point_on_mesh_tm=(closest_points_on_meshes[link_ind][i])
-        current_workspace_gd=torch.tensor(closest_point_on_mesh_tm)-closest_point_in_pc
-        current_workspace_gd=current_workspace_gd.type(torch.float)
+        current_workspace_gd=closest_point_on_mesh_tm-closest_point_in_pc.detach().cpu().numpy()
 
-        chain=chains[link_ind]
-        offset=closest_point_on_mesh_tm-position
+        
+        current_workspace_gds[link_ind].append(current_workspace_gd)
+        closest_points_on_meshes_tm[link_ind].append(closest_point_on_mesh_tm)
+        mds[link_ind].append(trimesh_mds[link_ind][i]) 
+        
+        if i==0:
+            if verbose:
+                closest_link=link_ind
+                closst_point=closest_point_on_mesh_tm
+            else:
+                closest_link=-1
+                closest_point=torch.zeros(3)    
+
+    mds_2=np.array([x for xs in mds for x in xs])
+
+    for j in range(len(chains)):
+
+        chain=chains[j]
+        
+         
+        num_offsets=len(closest_points_on_meshes_tm[j])  
+        if num_offsets>0:    
+            to_append=torch.ones(num_offsets).reshape(-1,1)
+            
+
+            cpom=torch.tensor(closest_points_on_meshes_tm[j]).type(torch.float)
+            
+
+            cwgds=torch.tensor(current_workspace_gds[j]).type(torch.float)
+            
+            appended_cpomt=torch.cat((cpom,to_append),dim=1)
+            appended_cpomt=appended_cpomt.type(torch.float)
+            transform_inv=inv_transformations[j].type(torch.float)  
+      
+            
+            pre_transform_point=torch.matmul(transform_inv,appended_cpomt.T).T
+
+            offsets=pre_transform_point[:,:3]        
+        
+     
+            th=jps[:j+2].repeat(num_offsets,1)
                 
-        J=chain.jacobian(jps[:link_ind+2],locations=offset)
+            J=chain.jacobian(th,locations=offsets)
   
-        J=J[0]
-        J_inv=J.transpose(0,1)
-        #Can calculate a rotation angle to move the point away with util.rot_dir_from_point but doesn't seem
-        #to make much difference in the success
-        rot_dir=torch.zeros(3)
-        padded_workspace_gd=torch.cat((current_workspace_gd,rot_dir))
+            J=J[0]
+            J_inv=torch.linalg.pinv(J)
+            #Can calculate a rotation angle to move the point away with util.rot_dir_from_point but doesn't seem
+            #to make much difference in the success
+            rot_dir=torch.zeros(num_offsets,3)
+            padded_workspace_gd=torch.cat((cwgds,rot_dir),dim=1)
 
-        gd=torch.zeros([6])
-        gd[:link_ind+2]=torch.tensor(torch.matmul(J_inv,padded_workspace_gd))
+            gd=torch.zeros([num_offsets,6])
+              
+            gd[:,:j+2]=torch.matmul(J_inv,padded_workspace_gd.unsqueeze(2))[:,:,0]
             
-        mds.append(trimesh_mds[link_ind][i])
-        gds.append(gd.detach().cpu().numpy())
+            gds.append(gd.detach().cpu().numpy())
             
-        new_workspace_gd=torch.matmul(J,gd[:link_ind+2])
+            if j==closest_link:
+                if verbose:
+                    new_workspace_gd=torch.matmul(J[0],cpom[0])
+                else:
+                    new_workspace_gd=torch.zeros(3)
+        
+    gds_2=[y for xs in gds for y in xs]
 
-    for i in range(len(mds)):
-        gds[i]=gds[i]*mds[0]/mds[i]
-    gd=-1*np.array(gds).sum(axis=0)
-    md=mds[0]
+    min_md=np.min(mds_2)
+
+    for i in range(len(mds_2)):
+
+        gds_2[i]=gds_2[i]*min_md/mds_2[i]
+    gd=np.array(gds_2).sum(axis=0)
+    md=min_md
     
                     
-    return md,gd,-1,[],[]
+    return md,gd,closest_link,closest_point,new_workspace_gd
     
-def combined_dist_func(network,pc,jps,normalize=False,use="network",num_tm_points=1):
+def sdf_func(s,pc,jps,num_tm_points=1,verbose=False):
     
+    poses,meshes,transformations=util.generate_poses_from_jps(robot,[jps],active_link_names,active_joint_names,sizes)
 
-    #Using Trimesh to calculte the minimum distance and the nearest point on the mesh in order to visualize
-    #The gradient
-    poses,meshes,_=util.generate_poses_from_jps(robot,[jps],active_link_names,active_joint_names,sizes)
+    pc=pc
+
+    s.set_joint_configuration(jps)        
+    sdf_dist, sdf_grad, closest_points_on_meshes, closest_point_ind = composed_sdf_distance_grad(s.sdf,pc)
+    non_zero_links=torch.where(closest_point_ind!=0)[0]
+        
+    sdf_dist=sdf_dist[non_zero_links]
+    sdf_grad=sdf_grad[non_zero_links]
+    closest_points_on_meshes=closest_points_on_meshes[non_zero_links]
+    closest_point_ind=closest_point_ind[non_zero_links]
+
+    gds=[]
     
+    if sdf_dist.shape[0]==0:
+        return np.inf,np.zeros(3),0,np.zeros(3),np.zeros(3)
+        
+    closest_points_by_link=[[],[],[],[],[]] 
+    sdf_grads_by_link=[[],[],[],[],[]]
+    mds_by_link=[[],[],[],[],[]]
+        
+    for i in range(min(num_tm_points,sdf_dist.shape[0])):
+        closest=torch.argmin(sdf_dist)
+        closest_ind=closest_point_ind[closest]-1 
+
+        if i==0:
+            #If this is for visualization we record the closest link and the closest point to the environment
+            if verbose:
+                closest_link=closest_ind
+                closest_point=s.link_frame_to_obj_frame[closest_link].transform_points(closest_points_on_meshes[closest] )
+            else:
+                closest_link=-1
+                closest_point=torch.zeros(3)
+        
+        closest_points_by_link[closest_ind].append(closest_points_on_meshes[closest])
+        
+        sdf_grads_by_link[closest_ind].append(-1*sdf_grad[closest])
+        mds_by_link[closest_ind].append(sdf_dist[closest])
+        
+            
+        sdf_dist=torch.cat((sdf_dist[:closest],sdf_dist[closest+1:]))
+        sdf_grad=torch.cat((sdf_grad[:closest],sdf_grad[closest+1:]))
+        closest_point_ind=torch.cat((closest_point_ind[:closest],closest_point_ind[closest+1:]))            
+        closest_points_on_meshes=torch.cat((closest_points_on_meshes[:closest],closest_points_on_meshes[closest+1:]))
+    
+    mds_2=np.array([x for xs in mds_by_link for x in xs])
+    
+    for j in range(len(chains)):
+    
+        chain=chains[j]
+
+        if len(closest_points_by_link[j])>0:
+        
+            #The modified SDF function already returns the closest points on the meshes in the link frame so no need
+            #To transform them here
+            offsets=torch.stack(closest_points_by_link[j],dim=0)
+            grad_dirs=torch.stack(sdf_grads_by_link[j],dim=0)
+            num_offsets=offsets.shape[0]
+        
+            th=jps[:j+2].repeat(num_offsets,1)
+            J=chain.jacobian(th,locations=offsets)
+
+            J=J[0]
+            J_inv=torch.linalg.pinv(J)
+
+            gd=torch.zeros([num_offsets,6])
+            
+            rot_dir=torch.zeros(num_offsets,3)
+            padded_workspace_gd=torch.cat((grad_dirs,rot_dir),dim=1)
+        
+            gd[:,:j+2]=torch.matmul(J_inv,padded_workspace_gd.unsqueeze(2))[:,:,0]
+
+            
+            gds.append(gd)
+            if j==closest_link
+                #again for visualization we record grad direction of the closest point
+                if verbose:
+                    new_workspace_gd=grad_dirs[0]
+                else:
+                    new_workspace_gd=torch.zeros(3)
+    
+    gds_2=[y for xs in gds for y in xs]
+
+    min_md=np.min(mds_2)
+    argmin_md=np.argmin(mds_2)
+    
+    for i in range(len(mds_2)):
+        gds_2[i]=gds_2[i]*min_md/mds_2[i]
+    gd=torch.stack(gds_2,dim=0).sum(dim=0)
+    md=min_md
+
+    return md,gd.detach().cpu().numpy(),closest_link,closest_point,new_workspace_gd
+
+    
+def combined_dist_func(network,s,pc,jps,normalize=False,use="network",num_tm_points=1,verbose=False):
+
+    #Use pytorch volumetrics SDF, we don't need anything else to visualize
+    if use=="sdf":
+        md,gd,closest_link,closest_point,workspace_gd=sdf_func(s,pc,jps,num_tm_points=1,verbose=False)
+        return md,gd,closest_link,closest_point,workspace_gd
+        
+        
+    #Get the meshes to calculate the distance with trimesh and the transforms to calculate the offset for the Jacobian
+    #When using sdf or trimesh
+    poses,meshes,transforms=util.generate_poses_from_jps(robot,[jps],active_link_names,active_joint_names,sizes)
+        
+    #If we aren't using the SDF, use trimesh to calculate the distance and nearest points on the mesh to the pointcloud
     closest_points_in_pc=[]
     closest_points_on_meshes=[]
     trimesh_mds=[]
@@ -188,6 +349,7 @@ def combined_dist_func(network,pc,jps,normalize=False,use="network",num_tm_point
     closest_points_in_pc=torch.stack(closest_points_in_pc)
     closest_points_on_meshes=np.stack(closest_points_on_meshes)
     trimesh_mds=np.array(trimesh_mds)
+    
     
     #Calculates the C-space gradient and minimum distance using the network
     if use=="network":
@@ -236,8 +398,12 @@ def combined_dist_func(network,pc,jps,normalize=False,use="network",num_tm_point
     #If we aren't using the network compute the workspace gradient from trimesh or are not computing the gradient
     else:
 
-        mds=[]
+        mds=[[],[],[],[],[]]
         gds=[]
+    
+        current_workspace_gds=[[],[],[],[],[]]
+        offsets=[[],[],[],[],[]]
+        closest_points_on_meshes_tm=[[],[],[],[],[]]
         
         #can't build a chain with a single link, so we look for the closest points on the other links. The first link
         #can't move much anyways, for some reason this isn't a problem in the speed test code, have to look into it more
@@ -246,71 +412,102 @@ def combined_dist_func(network,pc,jps,normalize=False,use="network",num_tm_point
         for i in range(num_tm_points):
             
             
-            link_ind=np.argmin(trimesh_mds[:,i])
+        
             
+            link_ind=np.argmin(trimesh_mds[:,i])
 
 
-            position=poses[0][link_ind+1][:3]
             closest_point_in_pc=closest_points_in_pc[link_ind][i]
             closest_point_on_mesh_tm=(closest_points_on_meshes[link_ind][i])
-            current_workspace_gd=torch.tensor(closest_point_on_mesh_tm)-closest_point_in_pc
-            current_workspace_gd=current_workspace_gd.type(torch.float)
-            if i==0:
-                closest_point=closest_point_on_mesh_tm
-                closest_link=link_ind+1
-                
-        
-        #Uses trimesh to calculate the gradient to use in the path adjustment
-            if use=="trimesh":
-                chain=chains[link_ind]
-                th=jps[:link_ind+2]
-                th.requires_grad=True
-                tg=chain.forward_kinematics(th)
-                m=tg.get_matrix()
-                m_inv=torch.linalg.inv(m[0])
-            
-                appended_cpomt=torch.cat((torch.tensor(closest_point_on_mesh_tm).type(torch.float),torch.tensor([1.])))
-            
-                pre_transform_point=torch.matmul(m_inv,appended_cpomt).detach().clone()
-                transform_point=torch.matmul(m,pre_transform_point)
-                distance=(transform_point[0][:3]-closest_point_in_pc).norm()
-                distance.backward()
-                gd=th.grad
-                offset=closest_point_on_mesh_tm-position
-                
-                J=chain.jacobian(jps[:link_ind+2],locations=offset)
-                
-                #Only looking at the position velocity, we don't care about a specific rotational velocity
-                J=J[0][:3]
-                J_inv=J.transpose(0,1)
+            current_workspace_gd=closest_point_on_mesh_tm-closest_point_in_pc.detach().cpu().numpy()
 
-                gd=torch.zeros([6])
-                gd[:link_ind+2]=torch.matmul(J_inv,current_workspace_gd)
+        
+            current_workspace_gds[link_ind].append(current_workspace_gd)
+            closest_points_on_meshes_tm[link_ind].append(closest_point_on_mesh_tm)
+            mds[link_ind].append(trimesh_mds[link_ind][i]) 
+        
+            if i==0:
+
+                closest_link=link_ind
+                closst_point=closest_point_on_mesh_tm  
+                original_workspace_gd=current_workspace_gd
             
-                mds.append(trimesh_mds[link_ind][i])
-                gds.append(gd.detach().cpu().numpy())
-            
-                new_workspace_gd=torch.matmul(J,gd[:link_ind+2])
-            
-                if i==0:
-                    new_workspace_gd=np.matmul(J,gd[:link_ind+2])
-                    workspace_gd=new_workspace_gd
-            
-        #If no method is specified assume no perterbation is intended, this will produce the path as is without 
-        #attempting to avoid collisions
-            else:
+            #Using no path adjustment method, simply return the closest point and direction to the environment
+            if use =="none":
                 md=np.inf
                 gd=np.array([])
                 workspace_gd=current_workspace_gd
                 
-                return md,gd,closest_link,closest_point,workspace_gd
+                return md,gd,closest_link,closest_point,original_workspace_gd
 
-        for i in range(len(mds)):
-            gds[i]=gds[i]*mds[0]/mds[i]
-        gd=-1*np.array(gds).sum(axis=0)
-        md=mds[0]
 
-    return md,gd,closest_link,closest_point,workspace_gd
+        
+            #Using trimesh to calculate the gradient to use in the path adjustment
+            if use=="trimesh:
+                mds_2=np.array([x for xs in mds for x in xs])
+
+                for j in range(len(chains)):
+
+                    chain=chains[j]
+        
+         
+                    num_offsets=len(closest_points_on_meshes_tm[j])  
+                    if num_offsets>0:    
+                        to_append=torch.ones(num_offsets).reshape(-1,1)
+            
+
+                        cpom=torch.tensor(closest_points_on_meshes_tm[j]).type(torch.float)
+            
+
+                        cwgds=torch.tensor(current_workspace_gds[j]).type(torch.float)
+            
+                        appended_cpomt=torch.cat((cpom,to_append),dim=1)
+                        appended_cpomt=appended_cpomt.type(torch.float)
+                        transform_inv=inv_transformations[j].type(torch.float)  
+      
+            
+                        pre_transform_point=torch.matmul(transform_inv,appended_cpomt.T).T
+
+                        offsets=pre_transform_point[:,:3]        
+        
+     
+                        th=jps[:j+2].repeat(num_offsets,1)
+                
+                        J=chain.jacobian(th,locations=offsets)
+  
+                        J=J[0]
+                        J_inv=torch.linalg.pinv(J)
+                        #Can calculate a rotation angle to move the point away with util.rot_dir_from_point but doesn't seem
+                        #to make much difference in the success
+                        rot_dir=torch.zeros(num_offsets,3)
+                        padded_workspace_gd=torch.cat((cwgds,rot_dir),dim=1)
+
+                        gd=torch.zeros([num_offsets,6])
+              
+                        gd[:,:j+2]=torch.matmul(J_inv,padded_workspace_gd.unsqueeze(2))[:,:,0]
+            
+                        gds.append(gd.detach().cpu().numpy())
+            
+                        if j==closest_link:
+                
+                        new_workspace_gd=torch.matmul(J[0],cpom[0])
+                
+                gds_2=[y for xs in gds for y in xs]
+
+                min_md=np.min(mds_2)
+
+                for i in range(len(mds_2)):
+
+                    gds_2[i]=gds_2[i]*min_md/mds_2[i]
+                gd=np.array(gds_2).sum(axis=0)
+            md=min_md
+    
+                    
+            return md,gd,closest_link,closest_point,new_workspace_gd
+        
+        #Otherwise unknown avoidance method was specified    
+        else:
+            return np.ing, [],-1,[],[]
 
     
 def null_func(pc,jps):
@@ -389,13 +586,18 @@ def path_adjust(scene,jps,dist_func,motion_scale=0.02,dist_threshold=0.02,scale_
 
                 norm_dv+=orth_vec
                 
-            if md>dist_threshold:
-                scale=1/pow((1+10*(md-dist_threshold)),2)
-                norm_gd=norm_gd*scale
+            if md-dist_threshold>0.06:
+                norm_gd=0
+            elif md>dist_threshold:
+                scale_gd=1/pow((1+10*(md-dist_threshold)),8)
+                norm_gd=norm_gd*scale_gd
+                scale_dv=1+2*np.tanh(md-dist_threshold)
+                norm_dv=norm_dv*scale_dv
                     
             else:
-                norm_gd=norm_gd*scale_adjust
-                
+                norm_dv=0
+
+
             direction_vector=norm_dv+norm_gd
 
             norm_dv=direction_vector/np.linalg.norm(direction_vector)
@@ -462,7 +664,8 @@ if __name__=="__main__":
     chains=[]
 
     for i in range(1,len(active_link_names)):
-        chains.append(pk.build_serial_chain_from_urdf(open("./test_arm/robot_obj_combined_hulls.urdf").read(), active_link_names[i],"right_shoulder_fe_link"))
+        chains.append(pk.build_serial_chain_from_urdf(open("./test_arm/robot_obj_combined_hulls.urdf").read(), active_link_names[i],"root_link"))
+        chains[-1]=chains[-1].to(device=device)
 
 
     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')

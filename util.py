@@ -219,8 +219,6 @@ def generate_poses_from_jps(robot,joint_positions,active_link_names,active_joint
             cfg[active_joint_names[i]]=jps[i]
 
         tfk=robot.collision_trimesh_fk(cfg,active_link_names)
-        test_meshes=[]    
-        before_transform_test_meshes=[]
         k=0
         link_poses=[]
         link_meshes=[]

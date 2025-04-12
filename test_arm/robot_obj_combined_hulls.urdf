@@ -1,4 +1,8 @@
-
+<!--
+	<origin xyz="-0.025653371670199543 -0.21558362067625494 -0.014419487612456233" rpy="2.6179938779914598 5.94530700557959e-14 -2.825363035797169e-14" />
+	<axis xyz="1.8306063673256304e-15 5.398712404411842e-15 0.9999999999999682" />
+	<limit effort="36" velocity="8.9" lower="-0.7853981633974483" upper="3.141592653589793" />
+-->
 <robot name="test_arm">
 
 <link name="world" />
@@ -11,111 +15,42 @@
 
 
 <link name="root_link">
-<visual>
-<origin xyz="9.47873756175138e-18 -2.856872724499304e-17 -0.024000000000000684" rpy="-2.7618585142051945e-16 -0.0 6.8534929388594916e-31" />
-<geometry>
-<mesh filename=".//meshes/urdf/obj_combined_hulls/root_link.obj" />
-</geometry>
-</visual>
-<collision>
-<origin xyz="9.47873756175138e-18 -2.856872724499304e-17 -0.024000000000000684" rpy="-2.7618585142051945e-16 -0.0 6.8534929388594916e-31" />
-<geometry>
-<mesh filename=".//meshes/urdf/obj_combined_hulls/root_link.obj" />
-</geometry>
-</collision>
-<inertial>
-<origin xyz="0.00679928302344931 6.653692674201541e-07 -0.27815003570157115" rpy="0 0 0" />
-<mass value="7.183594348600132" />
-<inertia ixx="0.31483080293207405" ixy="5.062017097616084e-07" ixz="0.021323894598139104" iyy="0.3143282448173946" iyz="-1.2779834144653864e-06" izz="0.032395636611825186" />
-</inertial>
+
 </link>
 
 
 <link name="torso_yaw_link">
-<visual>
-<origin xyz="0.0 1.262177448353619e-29 4.3368086899380734e-19" rpy="-1.8325957145940461 1.5707963267948966 0.0" />
-<geometry>
-<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_yaw_link.obj" />
-</geometry>
-</visual>
-<collision>
-<origin xyz="0.0 1.262177448353619e-29 4.3368086899380734e-19" rpy="-1.8325957145940461 1.5707963267948966 0.0" />
-<geometry>
-<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_yaw_link.obj" />
-</geometry>
-</collision>
-<inertial>
-<origin xyz="-0.00166403 -0.0101463 0.0623078" rpy="0 0 0" />
-<mass value="1.922" />
-<inertia ixx="0.006378107099964676" ixy="6.59823948125347e-05" ixz="4.522349518090528e-05" iyy="0.00268619309683605" iyz="0.0003399816945047182" izz="0.005342834122218298" />
-</inertial>
+
 </link>
 
-<joint name="torso_yaw" type="revolute">
+<joint name="torso_yaw" type="fixed">
 <origin xyz="-3.1105803444498797e-15 -5.762979069651171e-14 3.187988067975982e-15" rpy="3.7495554139391605e-14 2.213579307108516e-14 -1.4624371897651312e-14" />
 <parent link="root_link" />
 <child link="torso_yaw_link" />
-<axis xyz="2.2135793071084816e-14 -3.77717399908133e-14 1.0000000000000007" />
-<limit effort="70.0" velocity="4.1" lower="-0.7853981633974483" upper="0.7853981633974483" />
+
 
 </joint>
 
 <link name="torso_pitch_lower_link">
-<visual>
-<origin xyz="0.08 0.0 -0.08549999999999999" rpy="-1.5707963267948966 5.328688394996611e-30 1.5707963267948966" />
-<geometry>
-<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_pitch_lower_link.obj" />
-</geometry>
-</visual>
-<collision>
-<origin xyz="0.08 0.0 -0.08549999999999999" rpy="-1.5707963267948966 5.328688394996611e-30 1.5707963267948966" />
-<geometry>
-<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_pitch_lower_link.obj" />
-</geometry>
-</collision>
-<inertial>
-<origin xyz="-0.07573732954220565 -0.012714319395604561 -0.07998181952541111" rpy="0 0 0" />
-<mass value="0.5423763129502652" />
-<inertia ixx="0.0035963261683322626" ixy="-0.00025112304608164296" ixz="1.1650452549459382e-05" iyy="0.004013441490397242" iyz="5.2337508120182574e-06" izz="0.0017308649418825922" />
-</inertial>
+
 </link>
 
-<joint name="torso_pitch_lower" type="revolute">
+<joint name="torso_pitch_lower" type="fixed">
 <origin xyz="-3.8322800119873655e-15 -0.08550037499999534 0.05599999999998974" rpy="1.5707963267948197 1.5707963267948657 0.0" />
 <parent link="torso_yaw_link" />
 <child link="torso_pitch_lower_link" />
-<axis xyz="-3.059755751267585e-14 6.233280923648332e-14 1.0000000000000073" />
-<limit effort="70.0" velocity="4.1" lower="-0.5235987755982988" upper="0.2617993877991494" />
+
 
 </joint>
 
 <link name="torso_pitch_upper_link">
-<visual>
-<origin xyz="0.0 2.7755575615628914e-17 0.003500000000000003" rpy="-1.5519979019635813e-30 1.5707963267948966 0.0" />
-<geometry>
-<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_pitch_upper_link.obj" />
-</geometry>
-</visual>
-<collision>
-<origin xyz="0.0 2.7755575615628914e-17 0.003500000000000003" rpy="-1.5519979019635813e-30 1.5707963267948966 0.0" />
-<geometry>
-<mesh filename=".//meshes/urdf/obj_combined_hulls/torso_pitch_upper_link.obj" />
-</geometry>
-</collision>
-<inertial>
-<origin xyz="-0.015243445582268634 -0.14733934317604153 0.07604282037510816" rpy="0 0 0" />
-<mass value="5.391439784540943" />
-<inertia ixx="0.08453956115277658" ixy="-0.004628728157891779" ixz="0.0007906091526285789" iyy="0.028338851252210997" iyz="0.006181040264228648" izz="0.06417020298910171" />
-</inertial>
+
 </link>
 
-<joint name="torso_pitch_upper" type="continuous">
+<joint name="torso_pitch_upper" type="fixed">
 <origin xyz="-0.09272887864750137 -0.02484663665963369 9.575673587391975e-16" rpy="-3.141592653589763 2.1637508065301426e-17 1.5707963267948966" />
 <parent link="torso_pitch_lower_link" />
 <child link="torso_pitch_upper_link" />
-<axis xyz="-1.8748044307837196e-17 -3.013566795201047e-14 0.9999999999999998" />
-<mimic joint="torso_pitch_lower" multiplier="-1.0" offset="0" />
-<limit effort="70.0" velocity="4.1" />
 
 </joint>
 
