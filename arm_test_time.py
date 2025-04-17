@@ -68,10 +68,10 @@ def network_func(network,pc,jps,normalize=False):
                 
     return md,gd,-1,[],[]
 
-def trimesh_func(pc,jps,num_tm_points=1,verbose=False):
+def trimesh_func(pc,jps,num_tm_points=1,verbose=False,device='cpu'):
     
     poses,meshes,transformations=util.generate_poses_from_jps(robot,[jps],active_link_names,active_joint_names,sizes)
-    
+    jps=jps.to(device)
     closest_points_in_pc=[]
     closest_points_on_meshes=[]
     trimesh_mds=[]
@@ -113,7 +113,7 @@ def trimesh_func(pc,jps,num_tm_points=1,verbose=False):
     
 
     transformations=transformations[0][1:]
-    inv_transformations=torch.linalg.inv(torch.tensor(transformations))
+    inv_transformations=torch.linalg.inv(torch.tensor(transformations,device=device))
 
         
     current_workspace_gds=[[],[],[],[],[]]
@@ -152,13 +152,13 @@ def trimesh_func(pc,jps,num_tm_points=1,verbose=False):
          
         num_offsets=len(closest_points_on_meshes_tm[j])  
         if num_offsets>0:    
-            to_append=torch.ones(num_offsets).reshape(-1,1)
+            to_append=torch.ones(num_offsets).reshape(-1,1).to(devicee)
             
 
-            cpom=torch.tensor(closest_points_on_meshes_tm[j]).type(torch.float)
+            cpom=torch.tensor(closest_points_on_meshes_tm[j],device=device).type(torch.float)
             
 
-            cwgds=torch.tensor(current_workspace_gds[j]).type(torch.float)
+            cwgds=torch.tensor(current_workspace_gds[j],device=device).type(torch.float)
             
             appended_cpomt=torch.cat((cpom,to_append),dim=1)
             appended_cpomt=appended_cpomt.type(torch.float)
@@ -172,16 +172,16 @@ def trimesh_func(pc,jps,num_tm_points=1,verbose=False):
      
             th=jps[:j+2].repeat(num_offsets,1)
                 
-            J=chain.jacobian(th,locations=offsets)
+            J=chain.jacobian(th,locations=offsets.to('cpu'))
   
             J=J[0]
             J_inv=torch.linalg.pinv(J)
             #Can calculate a rotation angle to move the point away with util.rot_dir_from_point but doesn't seem
             #to make much difference in the success
-            rot_dir=torch.zeros(num_offsets,3)
+            rot_dir=torch.zeros(num_offsets,3).to(device)
             padded_workspace_gd=torch.cat((cwgds,rot_dir),dim=1)
 
-            gd=torch.zeros([num_offsets,6])
+            gd=torch.zeros([num_offsets,6]).to(device)
               
             gd[:,:j+2]=torch.matmul(J_inv,padded_workspace_gd.unsqueeze(2))[:,:,0]
             
@@ -204,13 +204,14 @@ def trimesh_func(pc,jps,num_tm_points=1,verbose=False):
     md=min_md
     
                     
-    return md,gd,closest_link,closest_point,new_workspace_gd
+    return md,gd.detach().cpu().numpy(),closest_link,closest_point,new_workspace_gd
     
-def sdf_func(s,pc,jps,num_tm_points=1,verbose=False):
+def sdf_func(s,pc,jps,num_tm_points=1,verbose=False,device='cpu'):
     
-    poses,meshes,transformations=util.generate_poses_from_jps(robot,[jps],active_link_names,active_joint_names,sizes)
+    #poses,meshes,transformations=util.generate_poses_from_jps(robot,[jps],active_link_names,active_joint_names,sizes)
 
-    pc=pc
+    pc=pc.to(device)
+    jps=jps.to(device)
 
     s.set_joint_configuration(jps)        
     sdf_dist, sdf_grad, closest_points_on_meshes, closest_point_ind = composed_sdf_distance_grad(s.sdf,pc)
@@ -254,7 +255,8 @@ def sdf_func(s,pc,jps,num_tm_points=1,verbose=False):
         closest_point_ind=torch.cat((closest_point_ind[:closest],closest_point_ind[closest+1:]))            
         closest_points_on_meshes=torch.cat((closest_points_on_meshes[:closest],closest_points_on_meshes[closest+1:]))
     
-    mds_2=np.array([x for xs in mds_by_link for x in xs])
+    mds_2=[x for xs in mds_by_link for x in xs]
+    mds_2=torch.stack(mds_2,dim=0)
     
     for j in range(len(chains)):
     
@@ -274,9 +276,9 @@ def sdf_func(s,pc,jps,num_tm_points=1,verbose=False):
             J=J[0]
             J_inv=torch.linalg.pinv(J)
 
-            gd=torch.zeros([num_offsets,6])
+            gd=torch.zeros([num_offsets,6]).to(device)
             
-            rot_dir=torch.zeros(num_offsets,3)
+            rot_dir=torch.zeros(num_offsets,3).to(device)
             padded_workspace_gd=torch.cat((grad_dirs,rot_dir),dim=1)
         
             gd[:,:j+2]=torch.matmul(J_inv,padded_workspace_gd.unsqueeze(2))[:,:,0]
@@ -292,7 +294,7 @@ def sdf_func(s,pc,jps,num_tm_points=1,verbose=False):
     
     gds_2=[y for xs in gds for y in xs]
 
-    min_md=np.min(mds_2)
+    min_md=torch.min(mds_2)
     argmin_md=np.argmin(mds_2)
     
     for i in range(len(mds_2)):
@@ -300,14 +302,14 @@ def sdf_func(s,pc,jps,num_tm_points=1,verbose=False):
     gd=torch.stack(gds_2,dim=0).sum(dim=0)
     md=min_md
 
-    return md,gd.detach().cpu().numpy(),closest_link,closest_point,new_workspace_gd
+    return md.detach().cpu().numpy(),gd.detach().cpu().numpy(),closest_link,closest_point,new_workspace_gd
 
     
-def combined_dist_func(network,s,pc,jps,normalize=False,use="network",num_tm_points=1,verbose=False):
+def combined_dist_func(network,s,pc,jps,normalize=False,use="network",num_tm_points=1):
 
     #Use pytorch volumetrics SDF, we don't need anything else to visualize
     if use=="sdf":
-        md,gd,closest_link,closest_point,workspace_gd=sdf_func(s,pc,jps,num_tm_points=1,verbose=False)
+        md,gd,closest_link,closest_point,workspace_gd=sdf_func(s,pc,jps,num_tm_points=1,verbose=True)
         return md,gd,closest_link,closest_point,workspace_gd
         
         
@@ -543,7 +545,6 @@ def path_adjust(scene,jps,dist_func,motion_scale=0.02,dist_threshold=0.02,scale_
     pc=util.create_pc(scene_meshes,20000,ta)
 
     total_checkpoints=jps.shape[0]
-    #print("jps",jps)
     md,gd,closest_link,closest_point,workspace_grad=get_grad(pc,dist_func,current_jps)
     
     grad_directions.append(gd)
@@ -663,10 +664,14 @@ if __name__=="__main__":
 
     chains=[]
 
+    #Initialize the chains to use for trimesh and sdf distance functions CPU is slightly faster
+    #here as we don't query large batches of points
     for i in range(1,len(active_link_names)):
         chains.append(pk.build_serial_chain_from_urdf(open("./test_arm/robot_obj_combined_hulls.urdf").read(), active_link_names[i],"root_link"))
-        chains[-1]=chains[-1].to(device=device)
+        chains[-1]=chains[-1].to(device='cpu')
 
+    #Initialize the robot SDF for the sdf distance function
+    s = ModifiedRobotSDF(chains[-1],active_link_names[:6], path_prefix="./test_arm/")
 
     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -682,6 +687,7 @@ if __name__=="__main__":
     dist_threshold=0.02
     scale_factor=1000
     max_tries=600
+    num_points=50
     
     method="network"
     example=10
@@ -689,16 +695,16 @@ if __name__=="__main__":
     #Parse arguments to either visualize an example or run comparative tests
 
     if len(sys.argv)<2 or sys.argv[1] not in ["visualize","test"]:
-        print("Useage: visualize -method <method name> -example <example number> or test. motion_scale, dist_threshold, and scale_factor are optional parameters for both visualize and test")
+        print("Useage: visualize -method <method name> -example <example number> or test. motion_scale, dist_threshold, scale_factor, and num_points are optional parameters for both visualize and test")
         exit()
 
     task=sys.argv[1]    
     argumentList = sys.argv[2:]
 
 
-    options = "m:,e:,s:,d:,f:,t:"
+    options = "m:,e:,s:,d:,f:,t:, p:"
 
-    long_options = ["method=", "example=", "motion_scale=","dist_threshold=","scale_factor=","max_tries="]
+    long_options = ["method=", "example=", "motion_scale=","dist_threshold=","scale_factor=","max_tries=","num_points="]
 
     try:
 
@@ -719,6 +725,8 @@ if __name__=="__main__":
                 scale_factor=float(currentValue)
             elif currentArgument in ("-t", "--max_tries"):
                 max_tries=float(currentValue)
+            elif currentArgument in ("-p", "--num_points"):
+                num_points=float(currentValue)
 
     except getopt.error as err:
         print (str(err))
@@ -729,22 +737,25 @@ if __name__=="__main__":
         times["tm"]=[]
         times["net"]=[]
         times["none"]=[]
+        times["sdf"]=[]
 
         successes={}
         successes["tm"]=0
         successes["net"]=0
         successes["none"]=0
+        successes["sdf"]=0
 
         dist_funcs={}
-        dist_funcs["tm"] = lambda x,y:trimesh_func(x,y)
+        dist_funcs["tm"] = lambda x,y:trimesh_func(x,y,num_tm_points=num_points)
         dist_funcs["net"]= lambda x,y:network_func(model,x,y)
         dist_funcs["none"] = lambda x,y:null_func(x,y)
+        dust_funcs["sdf"] = lambda x,y:sdf_func(s,x,y,num_tm_points=num_points)
 
         num_examples=obstructed_examples.shape[0]
 
         for i in range(num_examples):
     
-            for method in ["tm","net","none"]:
+            for method in ["tm","net","none","sdf"]:
         
                 dist_func=dist_funcs[method]
         
@@ -790,18 +801,36 @@ if __name__=="__main__":
                 was_successful= success and not collision 
                 successes[method]=was_successful
 
-        print("percentage of trimesh successes", np.array(successes["tm"]).sum()/num_examples*100)
-        print("average time for trimesh", np.array(times["tm"]).mean(), "+/-",np.array(times["tm"]).std())
-
-        print("percentage of network successes", np.array(successes["net"]).sum()/num_examples*100)
-        print("average time for network", np.array(times["net"]).mean(), "+/-",np.array(times["tm"]).std())
-
-        print("percentage of successes without path adjustment", np.array(successes["net"]).sum()/num_examples*100)
-        print("average time without path adjustment", np.array(times["net"]).mean(), "+/-",np.array(times["tm"]).std())
+        tms=np.array(successes["tm"])
+        sdfs=np.array(successes["sdf"])
+        nets=np.array(successes["net"])
+        nones=np.array(successes["none"])
         
+        tmt=np.array(times["tm"])
+        sdft=np.array(times["sdf"])
+        nett=np.array(times["net"])
+        nonet=np.array(times["none"])
+        
+        
+        print("percentage of trimesh successes", tms.sum()/num_examples*100)
+        print("average time for trimesh successes", tmt[np.where(tms==1)].mean(), "+/-",tmt[np.where(tms==1)].std())
+        
+        print("percentage of sdf successes", sdfs.sum()/num_examples*100)
+        print("average time for sdf successes", sdft[np.where(sdfs==1)].mean(), "+/-",sdft[np.where(sdfs==1)].std())
+        
+
+        print("percentage of network successes", nets.sum()/num_examples*100)
+        print("average time for network succeses", nett[np.where(nets==1)].mean(), "+/-",nett[np.where(nets==1)].std())
+        
+
+        print("percentage of successes without path adjustment", nones.sum()/num_examples*100)
+        print("average time without path adjustment", nonet.mean(), "+/-",nonet.std())
+        
+
+
     elif task=="visualize":
         print("method",method)
-        dist_func = lambda x,y:combined_dist_func(model,x,y, use=method,num_tm_points=1)
+        dist_func = lambda x,y:combined_dist_func(model,s,x,y, use=method,num_tm_points=num_points)
 
         cjps_1=torch.tensor(motion_trajectories[example][0]).type(torch.float).reshape(1,-1)
         cjps_2=torch.tensor(motion_trajectories[example][1]).type(torch.float).reshape(1,-1)
